@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  displayedColumns: string[] = ['id', 'nome', 'descricao', 'preco']; // Declare a propriedade displayedColumns
+  displayedColumns: string[] = ['posição', 'nome', 'idade', 'fortuna']; // Declare a propriedade displayedColumns
 
   dataSource = new MatTableDataSource<any>([]);
 
@@ -17,10 +17,16 @@ export class TableComponent {
 
   constructor() {
     this.dataSource = new MatTableDataSource([
-      { id: 1, nome: 'Item 1', descricao: 'Descrição do Item 1', preco: 10.99 },
-      { id: 2, nome: 'Item 2', descricao: 'Descrição do Item 2', preco: 11.99 },
-      { id: 3, nome: 'Item 3', descricao: 'Descrição do Item 3', preco: 12.99 },
-      // ...
+      { posição: 1, nome: 'Elon Musk', idade: 51, fortuna: "US$ 237,7 bilhões"},
+      { posição: 2, nome: "Bernard Arnault", idade: 74, fortuna: "US$ 231,9 bilhões"},
+      { posição: 3, nome: 'Jeff Bezos', idade: 59, fortuna: "US$ 153 bilhões"},
+      { posição: 4, nome: 'Larry Ellison', idade: 78, fortuna: "US$ 149,2 bilhões"},
+      { posição: 5, nome: 'Bill Gates', idade: 67, fortuna: "US$ 119,3 bilhões"},
+      { posição: 6, nome: 'Warren Buffett', idade: 92, fortuna: "US$ 111,9 bilhões"},
+      { posição: 7, nome: 'Steven Ballmer', idade: 67, fortuna: "US$ 104,0 bilhões"},
+      { posição: 8, nome: 'Larry Page', idade: 50, fortuna: "US$ 102,2 bilhões"},
+      { posição: 9, nome: 'Mark Zuckerberg', idade: 39, fortuna: "US$ 101,8 bilhões"},
+      { posição: 10, nome: 'Carlos Slim Helu', idade: 83, fortuna: "US$ 101,4 bilhões"},
     ]);
   }
 

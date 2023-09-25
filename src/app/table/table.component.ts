@@ -1,6 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { PageEvent } from '@angular/material/paginator';
+
+import { MatPaginator } from '@angular/material/paginator';
+
 
 
 @Component({
@@ -14,6 +18,10 @@ export class TableComponent {
   dataSource = new MatTableDataSource<any>([]);
 
   @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator) paginator!: MatPaginator; 
+
+  pageSize = 10;
+  pageIndex = 0;
 
   constructor() {
     this.dataSource = new MatTableDataSource([
@@ -38,6 +46,12 @@ export class TableComponent {
     const filtro = event.target.value.trim().toLowerCase();
     this.dataSource.filter = filtro;
   }
-  
 
+
+  atualizarPagina(event: PageEvent) {
+    this.pageSize = event.pageSize;
+    this.pageIndex = event.pageIndex;
+    this.dataSource.paginator = this.paginator; // Defina o paginador para o dataSource
+  }
+  
 }

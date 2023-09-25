@@ -13,7 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  displayedColumns: string[] = ['posição', 'nome', 'idade', 'fortuna']; // Declare a propriedade displayedColumns
+  displayedColumns: string[] = ['posição', 'nome', 'idade', 'fortuna']; 
 
   dataSource = new MatTableDataSource<any>([]);
 
@@ -51,7 +51,7 @@ export class TableComponent {
   atualizarPagina(event: PageEvent) {
     this.pageSize = event.pageSize;
     this.pageIndex = event.pageIndex;
-    this.dataSource.paginator = this.paginator; // Defina o paginador para o dataSource
+    this.dataSource.paginator = this.paginator; 
   }
   
 }
